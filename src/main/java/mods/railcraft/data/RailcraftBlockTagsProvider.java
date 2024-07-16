@@ -6,6 +6,7 @@ import mods.railcraft.tags.RailcraftTags;
 import mods.railcraft.world.level.block.RailcraftBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -347,6 +348,12 @@ public class RailcraftBlockTagsProvider extends BlockTagsProvider {
             RailcraftBlocks.ETCHED_QUARRIED_STONE.get(),
             RailcraftBlocks.QUARRIED_BRICKS.get(),
             RailcraftBlocks.QUARRIED_PAVER.get());
+    this.tag(RailcraftTags.Blocks.QUARRIED_REPLACEABLE_BLOCKS)
+        .addTags(BlockTags.DIRT)
+        .addTags(BlockTags.BASE_STONE_OVERWORLD)
+        .addTags(BlockTags.create(ResourceLocation.parse("c:ores")))
+        .add(Blocks.CLAY)
+        .add(Blocks.GRAVEL);
 
     this.tag(RailcraftTags.Blocks.ABYSSAL)
         .add(RailcraftBlocks.ABYSSAL_STONE.get(),
