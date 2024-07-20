@@ -7,6 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -93,7 +94,7 @@ public class QuarriedFeature extends Feature<QuarriedConfiguration> {
         return false;
     }
 
-    level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
+    level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_CLIENTS);
     return true;
   }
 
@@ -101,9 +102,9 @@ public class QuarriedFeature extends Feature<QuarriedConfiguration> {
       RandomSource random, QuarriedConfiguration config) {
     var above = blockPos.above();
     if (level.getBlockState(above).is(Blocks.SHORT_GRASS))
-      level.setBlock(above, Blocks.AIR.defaultBlockState(), 2);
+      level.setBlock(above, Blocks.AIR.defaultBlockState(), Block.UPDATE_CLIENTS);
 
     if (config.targetProvider().test(existingState, random))
-      level.setBlock(blockPos, config.stateProvider().getState(random, blockPos), 2);
+      level.setBlock(blockPos, config.stateProvider().getState(random, blockPos), Block.UPDATE_CLIENTS);
   }
 }
