@@ -1,7 +1,6 @@
 package mods.railcraft.data.worldgen.placements;
 
 import java.util.List;
-
 import org.jetbrains.annotations.NotNull;
 import mods.railcraft.api.core.RailcraftConstants;
 import mods.railcraft.data.worldgen.features.RailcraftOreFeatures;
@@ -15,7 +14,13 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraft.world.level.material.Fluids;
 
 public class RailcraftOrePlacements {
