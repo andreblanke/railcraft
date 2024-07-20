@@ -351,7 +351,7 @@ public class RailcraftBlockTagsProvider extends BlockTagsProvider {
     this.tag(RailcraftTags.Blocks.QUARRIED_REPLACEABLE_BLOCKS)
         .addTags(BlockTags.DIRT)
         .addTags(BlockTags.BASE_STONE_OVERWORLD)
-        .addTags(BlockTags.create(ResourceLocation.parse("c:ores")))
+        .addTags(Tags.Blocks.ORES)
         .add(Blocks.CLAY)
         .add(Blocks.GRAVEL);
 
