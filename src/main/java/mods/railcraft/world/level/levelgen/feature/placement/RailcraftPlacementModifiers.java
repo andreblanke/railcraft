@@ -15,6 +15,9 @@ public class RailcraftPlacementModifiers {
     public static RegistryObject<PlacementModifierType<HeightFilter>> HEIGHT_FILTER =
         deferredRegister.register("height_filter", () -> () -> HeightFilter.CODEC);
 
+    public static RegistryObject<PlacementModifierType<NearLavaFilter>> NEAR_LAVA_FILTER =
+        deferredRegister.register("near_lava_filter", () -> () -> NearLavaFilter.CODEC);
+
     public static RegistryObject<PlacementModifierType<NoiseThresholdFilter>> NOISE_THRESHOLD_FILTER =
         deferredRegister.register("noise_threshold_filter", () -> () -> NoiseThresholdFilter.CODEC);
 

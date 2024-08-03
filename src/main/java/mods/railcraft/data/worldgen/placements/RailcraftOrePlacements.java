@@ -6,6 +6,7 @@ import mods.railcraft.api.core.RailcraftConstants;
 import mods.railcraft.data.worldgen.features.RailcraftOreFeatures;
 import mods.railcraft.tags.RailcraftTags;
 import mods.railcraft.world.level.levelgen.feature.placement.HeightFilter;
+import mods.railcraft.world.level.levelgen.feature.placement.NearLavaFilter;
 import mods.railcraft.world.level.levelgen.feature.placement.NoiseThresholdFilter;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
+import net.minecraft.world.level.levelgen.placement.CountOnEveryLayerPlacement;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.HeightmapPlacement;
@@ -38,8 +40,8 @@ public class RailcraftOrePlacements {
   private static final int LEAD_VEIN_PER_CHUNK = 8;
   private static final int TIN_SMALL_VEIN_PER_CHUNK = 14;
   private static final int TIN_LARGE_VEIN_PER_CHUNK = 12;
-  private static final int SULFUR_VEIN_PER_CHUNK = 20;
-  private static final int SULFUR_BURIED_VEIN_PER_CHUNK = 12;
+  private static final int SULFUR_VEIN_PER_CHUNK = 45;
+  private static final int SULFUR_BURIED_VEIN_PER_CHUNK = 90;
   private static final int ZINC_VEIN_PER_CHUNK = 7;
   private static final int NICKEL_UPPER_VEIN_PER_CHUNK = 70;
   private static final int NICKEL_MIDDLE_VEIN_PER_CHUNK = 10;
@@ -81,14 +83,19 @@ public class RailcraftOrePlacements {
                     VerticalAnchor.absolute(72)))));
     context.register(SULFUR_ORE_UPPER,
         new PlacedFeature(getConfiguredFeature(context, RailcraftOreFeatures.SULFUR_ORE),
-            OrePlacements.commonOrePlacement(SULFUR_VEIN_PER_CHUNK,
-                HeightRangePlacement.uniform(VerticalAnchor.absolute(136),
-                    VerticalAnchor.top()))));
+            List.of(
+                CountOnEveryLayerPlacement.of(SULFUR_VEIN_PER_CHUNK),
+                HeightFilter.between(0, 100),
+                new NearLavaFilter())));
     context.register(SULFUR_ORE_LOWER,
         new PlacedFeature(getConfiguredFeature(context, RailcraftOreFeatures.SULFUR_ORE_BURIED),
-            OrePlacements.commonOrePlacement(SULFUR_BURIED_VEIN_PER_CHUNK,
-                HeightRangePlacement.triangle(VerticalAnchor.absolute(-10),
-                    VerticalAnchor.absolute(182)))));
+            List.of(
+                CountPlacement.of(SULFUR_BURIED_VEIN_PER_CHUNK),
+                InSquarePlacement.spread(),
+                HeightRangePlacement.uniform(
+                    VerticalAnchor.aboveBottom(9),
+                    VerticalAnchor.aboveBottom(15)),
+                new NearLavaFilter())));
     context.register(ZINC_ORE,
         new PlacedFeature(getConfiguredFeature(context, RailcraftOreFeatures.ZINC_ORE),
             OrePlacements.commonOrePlacement(ZINC_VEIN_PER_CHUNK,

@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#railcraft:has_sulfur",
   "features": "railcraft:sulfur_ore_upper",
   "step": "underground_ores"
 }

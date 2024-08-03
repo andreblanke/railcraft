@@ -11,6 +11,7 @@ import mods.railcraft.charge.ChargeCartStorageImpl;
 import mods.railcraft.charge.ChargeProviderImpl;
 import mods.railcraft.charge.ZapEffectProviderImpl;
 import mods.railcraft.client.ClientManager;
+import mods.railcraft.data.RailcraftBiomeTagsProvider;
 import mods.railcraft.data.RailcraftBlockTagsProvider;
 import mods.railcraft.data.RailcraftDamageTypeTagsProvider;
 import mods.railcraft.data.RailcraftDatapackProvider;
@@ -212,6 +213,8 @@ public class Railcraft {
     var blockTags = new RailcraftBlockTagsProvider(packOutput, lookupProvider, fileHelper);
     var blockTagsLookup = blockTags.contentsGetter();
     generator.addProvider(event.includeServer(), blockTags);
+    generator.addProvider(event.includeServer(),
+        new RailcraftBiomeTagsProvider(packOutput, lookupProvider, fileHelper));
     generator.addProvider(event.includeServer(),
         new RailcraftItemTagsProvider(packOutput, lookupProvider, blockTagsLookup, fileHelper));
     generator.addProvider(event.includeServer(),

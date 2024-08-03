@@ -2,6 +2,7 @@ package mods.railcraft.data.worldgen;
 
 import mods.railcraft.api.core.RailcraftConstants;
 import mods.railcraft.data.worldgen.placements.RailcraftOrePlacements;
+import mods.railcraft.tags.RailcraftTags;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -42,6 +43,7 @@ public class RailcraftBiomeModifiers {
     var netherTag = context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_NETHER);
     var forestTag = context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_FOREST);
     var desertTag = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_DESERT);
+    var hasSulfurTag = context.lookup(Registries.BIOME).getOrThrow(RailcraftTags.Biomes.HAS_SULFUR);
 
     context.register(LEAD_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
         overworldTag,
@@ -56,11 +58,11 @@ public class RailcraftBiomeModifiers {
         getPlacedFeature(context, RailcraftOrePlacements.TIN_ORE_LARGE),
         Decoration.UNDERGROUND_ORES));
     context.register(SULFUR_ORE_UPPER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-        overworldTag,
+        hasSulfurTag,
         getPlacedFeature(context, RailcraftOrePlacements.SULFUR_ORE_UPPER),
         Decoration.UNDERGROUND_ORES));
     context.register(SULFUR_ORE_LOWER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-        overworldTag,
+        hasSulfurTag,
         getPlacedFeature(context, RailcraftOrePlacements.SULFUR_ORE_LOWER),
         Decoration.UNDERGROUND_ORES));
     context.register(ZINC_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
