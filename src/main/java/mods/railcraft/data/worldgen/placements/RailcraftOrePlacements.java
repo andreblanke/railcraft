@@ -4,13 +4,21 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import mods.railcraft.api.core.RailcraftConstants;
 import mods.railcraft.data.worldgen.features.RailcraftOreFeatures;
+import mods.railcraft.tags.RailcraftTags;
+import mods.railcraft.world.level.levelgen.feature.placement.HeightFilter;
+import mods.railcraft.world.level.levelgen.feature.placement.NoiseThresholdFilter;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.OrePlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.util.valueproviders.WeightedListInt;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -18,8 +26,10 @@ import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.HeightmapPlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraft.world.level.material.Fluids;
 
@@ -35,7 +45,7 @@ public class RailcraftOrePlacements {
   private static final int NICKEL_MIDDLE_VEIN_PER_CHUNK = 10;
   private static final int NICKEL_SMALL_VEIN_PER_CHUNK = 10;
   private static final int SILVER_VEIN_PER_CHUNK = 6;
-  // private static final int SALTPETER_VEIN_PER_CHUNK = 5;
+  private static final int SALTPETER_VEIN_PER_CHUNK = 64;
 
   public static final ResourceKey<PlacedFeature> LEAD_ORE = createKey("lead_ore");
   public static final ResourceKey<PlacedFeature> TIN_ORE_SMALL = createKey("tin_ore_small");
@@ -119,10 +129,18 @@ public class RailcraftOrePlacements {
     context.register(SALTPETER,
         new PlacedFeature(getConfiguredFeature(context, RailcraftOreFeatures.SALTPETER),
             List.of(
-                // CountPlacement.of(SALTPETER_VEIN_PER_CHUNK),
+                CountPlacement.of(SALTPETER_VEIN_PER_CHUNK),
                 InSquarePlacement.spread(),
-                PlacementUtils.HEIGHTMAP_TOP_SOLID,
-                BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)),
+                HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                RandomOffsetPlacement.vertical(new WeightedListInt(
+                    SimpleWeightedRandomList.<IntProvider>builder()
+                        .add(ConstantInt.of(-1), 1)
+                        .add(ConstantInt.of(-2), 99)
+                        .build())),
+                HeightFilter.between(50, 100),
+                BlockPredicateFilter.forPredicate(
+                    BlockPredicate.matchesTag(RailcraftTags.Blocks.SALTPETER_ORE_REPLACEABLE_BLOCKS)),
+                NoiseThresholdFilter.of(100, 0.75F),
                 BiomeFilter.biome())));
     context.register(FIRESTONE,
         new PlacedFeature(getConfiguredFeature(context, RailcraftOreFeatures.FIRESTONE),

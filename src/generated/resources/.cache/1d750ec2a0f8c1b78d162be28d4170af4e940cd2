@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-02T14:34:16.11986	Block States: railcraft
+// 1.20.1	2024-08-02T16:27:43.274955034	Block States: railcraft
 add6c7b9a50c93a0ccd9ba6e317c1464c29ff9f0 assets/railcraft/blockstates/abandoned_activator_track.json
 141e735829ad3c7798b22e3fcc73490d9a9602ac assets/railcraft/blockstates/abandoned_booster_track.json
 bf85af556cff4cd7c4421614b631bf7d67ad23fe assets/railcraft/blockstates/abandoned_buffer_stop_track.json
@@ -300,6 +300,7 @@ a8c20a795e61285fae9d7880c2b806dd5831b686 assets/railcraft/blockstates/reinforced
 ffae2147357cde4a22bd0db9602c8e909e91349a assets/railcraft/blockstates/reinforced_wye_track.json
 4f72cdb4aca7843b7e46fcb7b469a2f0f2ac1bee assets/railcraft/blockstates/routing_detector.json
 b080e5991639b33b30601ee3e173b61ab4ac64ab assets/railcraft/blockstates/saltpeter_ore.json
+6e720a11bab71abb3824a2dba8e64670e95f1b04 assets/railcraft/blockstates/saltpeter_ore_spawner.json
 2b9ee239daa5de98ed94515e0aa01eb1e05087d5 assets/railcraft/blockstates/sheep_detector.json
 16de95e1e70abc0ad372f19c17021be5bebcebd5 assets/railcraft/blockstates/signal_block_relay_box.json
 16de95e1e70abc0ad372f19c17021be5bebcebd5 assets/railcraft/blockstates/signal_capacitor_box.json
@@ -1072,6 +1073,7 @@ bba06f443d862713ce48f1b6a2eadfa87bae8997 assets/railcraft/models/block/routing_d
 9db99342511c0d7b8e336136ea2dda2f54fc2d67 assets/railcraft/models/block/routing_track_raised_ne.json
 5b634cbc18f02a3b88378ac1ddf6421058185477 assets/railcraft/models/block/routing_track_raised_sw.json
 faf95188fb67ececfec21b2f02d9120e88c05576 assets/railcraft/models/block/saltpeter_ore.json
+6fb36e99202827b44aaab9ec6bef5ad2c09e1179 assets/railcraft/models/block/saltpeter_ore_spawner.json
 afdd272d96c9ddbc5a210fa3542226b3f2b78602 assets/railcraft/models/block/sheep_detector.json
 8685b47736ac9d81576a657804c58f2c08b05c4a assets/railcraft/models/block/sheep_detector_powered.json
 d56be68eb4460d54935d055966d4b270ff11fe21 assets/railcraft/models/block/signal_block_relay_box.json
@@ -1507,6 +1509,7 @@ fbf64503e81d2779a23aca643b36268d0b85bef1 assets/railcraft/models/item/reinforced
 eaa05d69d9ce71a8309c6908a8416d9b09131209 assets/railcraft/models/item/reinforced_wye_track.json
 6a26432a6bbf4695543053c15ce99ecbfd7146e6 assets/railcraft/models/item/routing_detector.json
 60e74f32c1a3d226a346a5c6a6fe358fafd086da assets/railcraft/models/item/saltpeter_ore.json
+ad066ca7972202ebfc809133e8bde0a4f91fd5b8 assets/railcraft/models/item/saltpeter_ore_spawner.json
 7f686b0e84d684a29173273909e2f851bc5a7906 assets/railcraft/models/item/sheep_detector.json
 99bf0afbb3b1ee5d5029f5c5fdec481d9b13cca8 assets/railcraft/models/item/signal_block_relay_box.json
 31f15aadd1bf0326d6991661e5b866ac5b006a32 assets/railcraft/models/item/signal_capacitor_box.json

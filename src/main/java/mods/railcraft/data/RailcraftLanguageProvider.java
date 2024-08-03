@@ -94,6 +94,7 @@ public class RailcraftLanguageProvider extends LanguageProvider {
     this.addBlock(RailcraftBlocks.ZINC_ORE, "Zinc Ore");
     this.addBlock(RailcraftBlocks.DEEPSLATE_ZINC_ORE, "Deepslate Zinc Ore");
     this.addBlock(RailcraftBlocks.SALTPETER_ORE, "Saltpeter Ore");
+    this.addBlock(RailcraftBlocks.SALTPETER_ORE_SPAWNER, "Saltpeter Ore Spawner");
     this.addBlock(RailcraftBlocks.FIRESTONE_ORE, "Firestone Ore");
     this.addBlock(RailcraftBlocks.STEEL_ANVIL, "Steel Anvil");
     this.addBlock(RailcraftBlocks.CHIPPED_STEEL_ANVIL, "Chipped Steel Anvil");

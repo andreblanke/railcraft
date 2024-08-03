@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-23T15:28:18.603959119	Loot Tables
+// 1.20.1	2024-08-02T16:27:43.270697522	Loot Tables
 2368bf4f9231f79e11c75fe244dd7a820a896d65 data/railcraft/loot_tables/blocks/abandoned_activator_track.json
 9097789b3b5eebaff6d62020fecf494c96348ac7 data/railcraft/loot_tables/blocks/abandoned_booster_track.json
 fbbe6fc8014502014e25452e15f95dc665234e15 data/railcraft/loot_tables/blocks/abandoned_buffer_stop_track.json
@@ -280,6 +280,7 @@ da1203726c1e803c4c32c3eee11f0290c73570ed data/railcraft/loot_tables/blocks/reinf
 b593d168aa7744639b4bbd10c32573289ab1573d data/railcraft/loot_tables/blocks/reinforced_whistle_track.json
 a175c3f3114336eca9550ddc93bec39d6d78b508 data/railcraft/loot_tables/blocks/routing_detector.json
 05a09f734bebb9a14517e7b47611bbb2a60efee3 data/railcraft/loot_tables/blocks/saltpeter_ore.json
+9ba7f0f53a91fdb7573d678efa10da74b70a6d85 data/railcraft/loot_tables/blocks/saltpeter_ore_spawner.json
 e23cd049bd7a289cede75a495884331159a83606 data/railcraft/loot_tables/blocks/sheep_detector.json
 1d1df341e4f7f0a99176fa3db8d83b61d77e3c60 data/railcraft/loot_tables/blocks/signal_block_relay_box.json
 28e9139901d6df531ac753e80b642fba219cf05d data/railcraft/loot_tables/blocks/signal_capacitor_box.json

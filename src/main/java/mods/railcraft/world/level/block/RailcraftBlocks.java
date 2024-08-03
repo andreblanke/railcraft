@@ -489,6 +489,10 @@ public class RailcraftBlocks {
               .strength(0.8F)
               .sound(SoundType.SAND), UniformInt.of(2, 5)));
 
+  public static final RegistryObject<Block> SALTPETER_ORE_SPAWNER =
+      deferredRegister.register("saltpeter_ore_spawner",
+          () -> new SaltpeterOreSpawnerBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
+
   public static final RegistryObject<Block> COAL_COKE_BLOCK =
       deferredRegister.register("coal_coke_block",
           () -> new CoalCokeBlock(5, 300, BlockBehaviour.Properties.of()

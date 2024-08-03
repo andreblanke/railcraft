@@ -1,29 +1,17 @@
 {
-  "type": "minecraft:disk",
+  "type": "railcraft:respawning_ore",
   "config": {
-    "half_height": 1,
-    "radius": {
-      "type": "minecraft:uniform",
-      "value": {
-        "max_inclusive": 3,
-        "min_inclusive": 2
+    "ore_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "railcraft:saltpeter_ore"
       }
     },
-    "state_provider": {
-      "fallback": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "railcraft:saltpeter_ore"
-        }
-      },
-      "rules": []
-    },
-    "target": {
-      "type": "minecraft:matching_blocks",
-      "blocks": [
-        "minecraft:dirt",
-        "railcraft:saltpeter_ore"
-      ]
+    "ore_spawner_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "railcraft:saltpeter_ore_spawner"
+      }
     }
   }
 }

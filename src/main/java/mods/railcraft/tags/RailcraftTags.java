@@ -244,7 +244,10 @@ public class RailcraftTags {
     public static final TagKey<Block> SULFUR_ORE = forgeTag("ores/sulfur");
     public static final TagKey<Block> TIN_ORE = forgeTag("ores/tin");
     public static final TagKey<Block> ZINC_ORE = forgeTag("ores/zinc");
+
     public static final TagKey<Block> SALTPETER_ORE = forgeTag("ores/saltpeter");
+    public static final TagKey<Block> SALTPETER_ORE_REPLACEABLE_BLOCKS =
+        tag("saltpeter_ore_replaceable_blocks");
 
     private static TagKey<Block> tag(String name) {
       return BlockTags.create(RailcraftConstants.rl(name));

@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -40,6 +41,7 @@ public class RailcraftBiomeModifiers {
     var overworldTag = context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD);
     var netherTag = context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_NETHER);
     var forestTag = context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_FOREST);
+    var desertTag = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_DESERT);
 
     context.register(LEAD_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
         overworldTag,
@@ -90,7 +92,7 @@ public class RailcraftBiomeModifiers {
         getPlacedFeature(context, RailcraftOrePlacements.QUARRIED_STONE),
         Decoration.UNDERGROUND_ORES));
     context.register(SALTPETER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-        overworldTag,
+        desertTag,
         getPlacedFeature(context, RailcraftOrePlacements.SALTPETER),
         Decoration.UNDERGROUND_ORES));
     context.register(FIRESTONE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(

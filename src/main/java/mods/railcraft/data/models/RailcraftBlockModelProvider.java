@@ -178,6 +178,13 @@ public class RailcraftBlockModelProvider extends BlockStateProvider {
     this.simpleBlockItem(block, this.cubeAll(block));
   }
 
+  public void simpleBlock(Block block, Block textureBlock) {
+    var model = models().cubeAll(name(block), blockTexture(textureBlock));
+
+    super.simpleBlock(block, model);
+    this.simpleBlockItem(block, model);
+  }
+
   public void simpleStairsBlock(StairBlock stairBlock, Block textureBlock) {
     var texture = TextureMapping.getBlockTexture(textureBlock);
     this.stairsBlock(stairBlock, texture);
@@ -272,6 +279,7 @@ public class RailcraftBlockModelProvider extends BlockStateProvider {
     this.simpleBlock(RailcraftBlocks.DEEPSLATE_TIN_ORE.get());
     this.simpleBlock(RailcraftBlocks.DEEPSLATE_ZINC_ORE.get());
     this.simpleBlock(RailcraftBlocks.SALTPETER_ORE.get());
+    this.simpleBlock(RailcraftBlocks.SALTPETER_ORE_SPAWNER.get(), Blocks.BEDROCK);
     this.simpleBlock(RailcraftBlocks.FIRESTONE_ORE.get());
 
     this.simpleBlock(RailcraftBlocks.QUARRIED_STONE.get());

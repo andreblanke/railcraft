@@ -130,6 +130,8 @@ public class RailcraftBlockLoot extends BlockLootSubProvider {
         block -> this.createOreDrop(block, RailcraftItems.SULFUR_DUST.get(), 2, 5));
     this.add(RailcraftBlocks.SALTPETER_ORE.get(),
         block -> this.createOreDrop(block, RailcraftItems.SALTPETER_DUST.get(), 3, 5));
+    this.add(RailcraftBlocks.SALTPETER_ORE_SPAWNER.get(),
+        block -> noDrop());
 
     for (var dyeColor : DyeColor.values()) {
       this.dropSelf(RailcraftBlocks.STRENGTHENED_GLASS.variantFor(dyeColor).get());

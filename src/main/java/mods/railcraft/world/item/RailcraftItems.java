@@ -235,6 +235,9 @@ public class RailcraftItems {
   public static final RegistryObject<BlockItem> SALTPETER_ORE =
       blockItem(RailcraftBlocks.SALTPETER_ORE);
 
+  public static final RegistryObject<BlockItem> SALTPETER_GENERATOR =
+      blockItem(RailcraftBlocks.SALTPETER_ORE_SPAWNER);
+
   public static final RegistryObject<CoalCokeBlockItem> COAL_COKE_BLOCK =
       deferredRegister.register("coal_coke_block",
           () -> new CoalCokeBlockItem(new Properties()));

@@ -423,6 +423,8 @@ public class RailcraftBlockTagsProvider extends BlockTagsProvider {
 
     this.tag(RailcraftTags.Blocks.SALTPETER_ORE)
         .add(RailcraftBlocks.SALTPETER_ORE.get());
+    this.tag(RailcraftTags.Blocks.SALTPETER_ORE_REPLACEABLE_BLOCKS)
+        .add(Blocks.SAND);
 
     this.tag(Tags.Blocks.ORES)
         .add(RailcraftBlocks.FIRESTONE_ORE.get())

@@ -66,6 +66,7 @@ public class RailcraftCreativeModeTabs {
             output.accept(RailcraftItems.SULFUR_ORE.get());
             output.accept(RailcraftItems.DEEPSLATE_SULFUR_ORE.get());
             output.accept(RailcraftItems.SALTPETER_ORE.get());
+            output.accept(RailcraftItems.SALTPETER_GENERATOR.get());
             output.accept(RailcraftItems.LEAD_ORE.get());
             output.accept(RailcraftItems.DEEPSLATE_LEAD_ORE.get());
             output.accept(RailcraftItems.NICKEL_ORE.get());

@@ -61,6 +61,7 @@ import mods.railcraft.world.level.block.entity.worldspike.WorldSpikeBlockEntity;
 import mods.railcraft.world.level.block.track.TrackTypes;
 import mods.railcraft.world.level.gameevent.RailcraftGameEvents;
 import mods.railcraft.world.level.levelgen.feature.RailcraftFeatures;
+import mods.railcraft.world.level.levelgen.feature.placement.RailcraftPlacementModifiers;
 import mods.railcraft.world.level.levelgen.structure.ComponentWorkshop;
 import mods.railcraft.world.level.levelgen.structure.RailcraftStructurePieces;
 import mods.railcraft.world.level.levelgen.structure.RailcraftStructureTypes;
@@ -155,6 +156,7 @@ public class Railcraft {
     RailcraftVillagerProfession.register(modEventBus);
     RailcraftLootModifiers.register(modEventBus);
     RailcraftFeatures.register(modEventBus);
+    RailcraftPlacementModifiers.register(modEventBus);
     RailcraftStructureTypes.register(modEventBus);
     RailcraftStructurePieces.register(modEventBus);
   }

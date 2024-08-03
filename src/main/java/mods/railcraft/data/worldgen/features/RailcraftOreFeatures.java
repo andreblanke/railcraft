@@ -8,12 +8,12 @@ import mods.railcraft.tags.RailcraftTags;
 import mods.railcraft.world.level.block.RailcraftBlocks;
 import mods.railcraft.world.level.levelgen.feature.RailcraftFeatures;
 import mods.railcraft.world.level.levelgen.feature.configuration.QuarriedConfiguration;
+import mods.railcraft.world.level.levelgen.feature.configuration.RespawningOreConfiguration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -124,12 +124,10 @@ public class RailcraftOreFeatures {
         new QuarriedConfiguration(
             QUARRIED_REPLACEABLE_BLOCKS,
             BlockStateProvider.simple(RailcraftBlocks.QUARRIED_STONE.get()))));
-    context.register(SALTPETER, new ConfiguredFeature<>(Feature.DISK,
-        new DiskConfiguration(
-            RuleBasedBlockStateProvider.simple(RailcraftBlocks.SALTPETER_ORE.get()),
-            BlockPredicate.matchesBlocks(
-                List.of(Blocks.DIRT, RailcraftBlocks.SALTPETER_ORE.get())),
-            UniformInt.of(2, 3), 1)));
+    context.register(SALTPETER, new ConfiguredFeature<>(RailcraftFeatures.RESPAWNING_ORE.get(),
+        new RespawningOreConfiguration(
+            BlockStateProvider.simple(RailcraftBlocks.SALTPETER_ORE.get()),
+            BlockStateProvider.simple(RailcraftBlocks.SALTPETER_ORE_SPAWNER.get()))));
     context.register(FIRESTONE, new ConfiguredFeature<>(Feature.DISK,
         new DiskConfiguration(
             RuleBasedBlockStateProvider.simple(RailcraftBlocks.FIRESTONE_ORE.get()),
